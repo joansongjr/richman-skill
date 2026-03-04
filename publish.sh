@@ -9,26 +9,18 @@
 #
 # 或者手动执行下面的命令。
 
-GITHUB_USER="你的GitHub用户名"  # ← 改成你的
+GITHUB_USER="joansongjr"
 
-echo "=== Step 1: 初始化 Git 仓库 ==="
-git init
-git add SKILL.md README.md LICENSE .gitignore
-git commit -m "feat: richman-skill v1.0.0 — A股投研观点分析助手"
+echo "=== Step 1: 推送到 GitHub ==="
+git push -u origin "$(git branch --show-current)"
 
 echo ""
-echo "=== Step 2: 推送到 GitHub ==="
-git branch -M main
-git remote add origin "https://github.com/${GITHUB_USER}/richman-skill.git"
-git push -u origin main
-
-echo ""
-echo "=== Step 3: 发布到 ClawHub ==="
+echo "=== Step 2: 发布到 ClawHub ==="
 echo "请确认你已经登录 clawhub（如果没有，先运行 clawhub login）"
 clawhub publish ./
 
 echo ""
-echo "=== Step 4: 验证发布 ==="
+echo "=== Step 3: 验证发布 ==="
 clawhub search richman-skill
 
 echo ""
