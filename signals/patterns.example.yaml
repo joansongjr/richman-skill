@@ -1,0 +1,19 @@
+# 技术形态规则示例（占位）
+
+breakout:
+  description: "突破前高 + 放量"
+  lookback_days: 20
+  price_threshold_pct: 1.0   # 超过过去 20 日高点 1%
+  volume_multiplier: 1.5     # 今日成交量 > 过去 20 日均量 * 1.5
+
+first_limit_up:
+  description: "第一个涨停启动（A 股）"
+  lookback_days: 10
+  limit_up_pct: 9.5          # 涨停阈值
+  min_turnover: 3.0          # 换手率下限（%）
+
+bottom_reversal:
+  description: "底部放量反转"
+  lookback_days: 60
+  low_pct_threshold: 20.0    # 当前位置相对 60 日最高价的折价比例
+  volume_multiplier: 2.0     # 放量倍数
