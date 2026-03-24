@@ -64,6 +64,12 @@ def main():
     # 示例题材——仅用于演示
     topic_cpo = upsert_topic(conn, "CPO/光模块", "光模块 / 硅光 / 数据中心高速光互联赛道")
     topic_lpo = upsert_topic(conn, "LPO/高速互联", "高速网络设备 / AI I/O / 数据中心交换机等")
+    topic_sodium = upsert_topic(
+        conn,
+        "钠电池/钠离子电池",
+        "钠离子电池产业链：电芯制造、正极材料、负极材料（硬碳）、电解液等，"
+        "2026年为规模化商用关键转折点",
+    )
 
     # 示例标的——不构成投资建议
     # 市场代码简化为 CN，后续接行情时再细分 SH/SZ 等
@@ -75,6 +81,24 @@ def main():
         # LPO / 高速互联
         (topic_lpo, "000938.SZ", "CN", "紫光股份"),
         (topic_lpo, "603019.SH", "CN", "中科曙光"),
+        # 钠电池 / 钠离子电池 —— 电芯制造
+        (topic_sodium, "300750.SZ", "CN", "宁德时代"),    # 龙头，二代钠电池已发布，2026年规模化部署
+        (topic_sodium, "002594.SZ", "CN", "比亚迪"),      # 首座钠电池工厂2024年动工
+        (topic_sodium, "002866.SZ", "CN", "传艺科技"),    # 规划10GWh钠电池产能，中试线已投产
+        (topic_sodium, "600152.SH", "CN", "维科技术"),    # 2023年量产，储能钠电出货领先
+        # 钠电池 —— 正极材料
+        (topic_sodium, "003027.SZ", "CN", "同兴环保"),    # 钠电正极材料（聚阴离子路线），已送样30+客户
+        (topic_sodium, "688005.SH", "CN", "容百科技"),    # 层状氧化物正极材料龙头
+        (topic_sodium, "300073.SZ", "CN", "当升科技"),    # 正极材料，布局钠电正极
+        (topic_sodium, "688707.SH", "CN", "振华新材"),    # 层状氧化物正极
+        # 钠电池 —— 负极材料（硬碳）
+        (topic_sodium, "835185.BJ", "CN", "贝特瑞"),     # 负极材料龙头，布局硬碳负极
+        (topic_sodium, "300890.SZ", "CN", "翔丰华"),     # 负极材料，硬碳研发
+        (topic_sodium, "600884.SH", "CN", "杉杉股份"),    # 负极材料供应商
+        # 钠电池 —— 电解液 & 其他
+        (topic_sodium, "002709.SZ", "CN", "天赐材料"),    # 电解液龙头
+        (topic_sodium, "002407.SZ", "CN", "多氟多"),     # 电解液（六氟磷酸钠）
+        (topic_sodium, "600348.SH", "CN", "华阳股份"),    # 投资中科海钠，布局钠电全产业链
     ]
 
     for topic_id, code, market, name in sample_stocks:
